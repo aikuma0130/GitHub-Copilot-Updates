@@ -40,7 +40,8 @@ jobs:
           echo "=== GitHub Copilot アップデート情報の収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-copilot-changelog.md)" \
             --allow-all \
-            --autopilot
+            --autopilot \
+            --model claude-opus-4.6
           echo "=== タスク1 完了 ==="
 
       - name: 'Task 2: Update VSCode Copilot info'
@@ -51,7 +52,8 @@ jobs:
           echo "=== VSCode GitHub Copilot 関連アップデートの収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-vscode-copilot.md)" \
             --allow-all \
-            --autopilot
+            --autopilot \
+            --model claude-opus-4.6
           echo "=== タスク2 完了 ==="
 
       - name: 'Task 3: Update Copilot CLI release info'
@@ -62,7 +64,8 @@ jobs:
           echo "=== GitHub Copilot CLI リリース情報の収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-copilot-cli.md)" \
             --allow-all \
-            --autopilot
+            --autopilot \
+            --model claude-opus-4.6
           echo "=== タスク3 完了 ==="
 
       - name: Check for changes
