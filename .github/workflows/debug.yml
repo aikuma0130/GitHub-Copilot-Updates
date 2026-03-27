@@ -28,11 +28,11 @@ jobs:
       - name: Verify Copilot CLI installation
         run: copilot --version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
 
       - name: 'Task 1: Update GitHub Copilot changelog'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
         run: |
           echo "=== GitHub Copilot アップデート情報の収集を開始 ==="
           copilot -p "GitHub Copilot について report.md に出力して" --allow-all
