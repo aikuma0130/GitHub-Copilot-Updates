@@ -30,12 +30,12 @@ jobs:
       - name: Verify Copilot CLI installation
         run: copilot --version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
 
       - name: 'Task 1: Update GitHub Copilot changelog'
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
         run: |
           echo "=== GitHub Copilot アップデート情報の収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-copilot-changelog.md)" \
@@ -46,7 +46,7 @@ jobs:
       - name: 'Task 2: Update VSCode Copilot info'
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
         run: |
           echo "=== VSCode GitHub Copilot 関連アップデートの収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-vscode-copilot.md)" \
@@ -57,7 +57,7 @@ jobs:
       - name: 'Task 3: Update Copilot CLI release info'
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
         run: |
           echo "=== GitHub Copilot CLI リリース情報の収集を開始 ==="
           copilot -p "/research $(cat assets/prompts/update-copilot-cli.md)" \
