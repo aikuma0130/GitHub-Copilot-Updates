@@ -25,7 +25,7 @@ jobs:
           node-version: '22'
 
       - name: Install GitHub Copilot CLI
-        run: npm install -g @githubnext/github-copilot-cli
+        run: npm install -g @github/copilot
 
       - name: Verify Copilot CLI installation
         run: copilot --version
