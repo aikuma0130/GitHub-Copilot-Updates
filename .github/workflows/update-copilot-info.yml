@@ -68,25 +68,12 @@ jobs:
             --model claude-opus-4.6
           echo "=== タスク3 完了 ==="
 
-      - name: Check for changes
-        id: changes
+      - name: Push unpushed commits
         run: |
-          git add -A
-          if git diff --cached --quiet; then
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
-            echo "変更なし — コミットをスキップします"
+          if git log origin/main..HEAD --oneline | grep -q .; then
+            echo "未 push のコミットを検出しました:"
+            git log origin/main..HEAD --oneline
+            git push
           else
-            echo "has_changes=true" >> "$GITHUB_OUTPUT"
-            echo "変更を検出しました:"
-            git diff --cached --stat
+            echo "push するコミットはありません"
           fi
-
-      - name: Commit and push
-        if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update GitHub Copilot info (automated)
-
-          Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
-          git push

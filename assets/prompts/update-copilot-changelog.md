@@ -42,6 +42,15 @@ GitHub Changelog (<https://github.blog/changelog/>) にアクセスし、GitHub 
 
 新規アップデートが見つからない場合は、**ファイルの生成や変更を一切行わないで**ください。
 
+### 6. 新しいアップデートがある場合
+
+git add -A および git commit してください。
+コミットメッセージは以下のフォーマットで作成してください。
+
+```
+Update GitHub Copilot changelog for YYYY/MM/DD
+```
+
 ## 注意事項
 
 - 日付はアップデートの実際の発表日を使用すること（本日の日付ではない）
@@ -50,3 +59,4 @@ GitHub Changelog (<https://github.blog/changelog/>) にアクセスし、GitHub 
 - 公式リンク（GitHub Blog / Changelog の URL）を必ず含めること
 - 概要は1-2文で簡潔にまとめること
 - 2026年1月以降のアップデートのみを対象とすること
+- git push は禁止です。ローカルでコミットするだけで十分です。

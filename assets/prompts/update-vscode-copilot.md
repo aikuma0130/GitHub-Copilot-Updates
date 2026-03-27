@@ -41,6 +41,15 @@ VS Code の公式リリースノート (<https://code.visualstudio.com/updates/>
 
 新規リリースが見つからない場合、または GitHub Copilot 関連の変更がない場合は、**ファイルの生成や変更を一切行わないで**ください。
 
+### 6. 新しいアップデートがある場合
+
+git add -A および git commit してください。
+コミットメッセージは以下のフォーマットで作成してください。
+
+```
+Update VS Code GitHub Copilot changelog for vX.Y.Z
+```
+
 ## 注意事項
 
 - 日付はリリースの実際の公開日を使用すること
@@ -49,3 +58,4 @@ VS Code の公式リリースノート (<https://code.visualstudio.com/updates/>
 - 概要は1-2文で簡潔にまとめること
 - GitHub Copilot に関連しない変更は記載しないこと
 - 2026年1月以降のリリースのみを対象とすること
+- git push は禁止です。ローカルでコミットするだけで十分です。
